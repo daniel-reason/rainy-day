@@ -10,6 +10,7 @@ var server = express()
 
 module.exports = server
 
+server.use(express.static('./public'))
 // Middleware
 
 server.engine('hbs', hbs({extname: 'hbs'}))
