@@ -4,7 +4,7 @@ var connection = require('knex')(config)
 
 module.exports = {
   getActivities: getActivities,
-  getActivities: getActivities
+  getActivity: getActivity
 }
 
 function getActivities (testDb) {
@@ -13,7 +13,7 @@ function getActivities (testDb) {
   return db('activities').select()
 }
 
-function getActivities (id, testDb) {
+function getActivity (id, testDb) {
   var db = testDb || connection
   return db('activities').where('id', id)
 }
