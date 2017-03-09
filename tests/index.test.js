@@ -23,21 +23,21 @@ test.afterEach(function (t) {
   t.context.db.destroy()
 })
 
-test('getUsers gets all users', function (t) {
+test('getActivities gets all activities', function (t) {
   // One for each letter of the alphabet!
-  var expected = 26
-  return db.getUsers(t.context.db)
+  var expected = 2
+  return db.getActivities(t.context.db)
     .then(function (result) {
       var actual = result.length
       t.is(expected, actual)
     })
 })
 
-test('getUsers gets a single user', function (t) {
-  var expected = 'Ambitious Aardvark'
-  return db.getUser(99901, t.context.db)
+test('getActivities gets a single activity', function (t) {
+  var expected = 'Running'
+  return db.getActivities(99901, t.context.db)
     .then(function (result) {
-      var actual = result[0].name
+      var actual = result[0].activity
       t.is(expected, actual)
     })
 })
