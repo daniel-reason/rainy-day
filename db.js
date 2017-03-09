@@ -3,8 +3,9 @@ var config = require('./knexfile')[environment]
 var connection = require('knex')(config)
 
 module.exports = {
-  getActivities: getActivities,
-  getActivity: getActivity
+  getActivities: getActivities
+  // getActivity: getActivity
+
 }
 
 function getActivities (testDb) {
@@ -13,7 +14,8 @@ function getActivities (testDb) {
   return db('activities').select()
 }
 
-function getActivity (id, testDb) {
-  var db = testDb || connection
-  return db('activities').where('id', id)
-}
+// function getActivity (id, testDb) {
+//   var db = testDb || connection
+//   return db('activities').where('id', id)
+// }
+
