@@ -10,6 +10,7 @@ var server = express()
 
 module.exports = server
 
+server.use(express.static('./public'))
 // Middleware
 
 server.engine('hbs', hbs({extname: 'hbs'}))
@@ -20,4 +21,5 @@ server.use(bodyParser.urlencoded({ extended: true }))
 // Routes
 
 server.get('/', index.get)
-
+server.get('/form', index.form)
+server.post('/form', index.saveForm)
