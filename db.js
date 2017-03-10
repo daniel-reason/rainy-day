@@ -4,7 +4,8 @@ var connection = require('knex')(config)
 
 module.exports = {
   getActivities: getActivities,
-  makeRecommendation: makeRecommendation
+  makeRecommendation: makeRecommendation,
+  addActivity: addActivity
 
 }
 
@@ -21,4 +22,11 @@ function makeRecommendation (req, testDb){
       location:req.location
     })
     .select('activity', 'time')
+}
+
+function addActivity (activity, time, location) {
+    var db = connection
+      db('activities')
+      .insert({ activity, time, location })
+      .then()
 }
