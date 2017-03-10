@@ -4,7 +4,8 @@ var db = require('../db')
 
 module.exports = {
   get: get,
-  form: form
+  form: form,
+  saveForm: saveForm
 }
 
 function get (req, res) {
@@ -20,4 +21,11 @@ function get (req, res) {
 
 function form (req, res) {
   res.render('form')
+}
+
+function saveForm(req, res) {
+  db.makeRecommendation(req.body)
+  .then(function (activities) {
+    res.render('index',{activities:activities})
+  })
 }

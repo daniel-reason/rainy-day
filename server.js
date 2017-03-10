@@ -22,3 +22,4 @@ server.use(bodyParser.urlencoded({ extended: true }))
 
 server.get('/', index.get)
 server.get('/form', index.form)
+server.post('/form', index.saveForm)
