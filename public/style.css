@@ -9,7 +9,7 @@ h1 {
 }
 
 body {
-  background-color: pink;
+  background-color: #cc0066;
 }
 
 p {
@@ -28,4 +28,8 @@ ul {
   -webkit-background-clip: text;
   background-clip: text;
   text-align: center;
+}
+
+form {
+  color: white;
 }

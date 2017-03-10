@@ -26,6 +26,7 @@ function makeRecommendation (req, testDb){
 
 function addActivity (activity, time, location) {
     var db = connection
-    return db('activities')
+      db('activities')
       .insert({ activity, time, location })
+      .then()
 }

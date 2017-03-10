@@ -6,7 +6,6 @@ module.exports = {
   get: get,
   form: form,
   saveForm: saveForm,
- 
   add: add,
   addPage: addPage
 
@@ -40,7 +39,5 @@ function addPage (req, res) {
 function add (req, res) {
   var data = req.body
   db.addActivity(data.activity, data.time, data.location)
-    .then(function (activities) {
-      res.render('index', { activities: activities })
-    })
-}
+    res.redirect('/')
+  }
