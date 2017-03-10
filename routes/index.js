@@ -6,7 +6,10 @@ module.exports = {
   get: get,
   form: form,
   saveForm: saveForm,
-  add:add
+ 
+  add: add,
+  addPage: addPage
+
 }
 
 function get (req, res) {
@@ -17,7 +20,6 @@ function get (req, res) {
     .catch(function (err) {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
-
 }
 
 function form (req, res) {
@@ -29,4 +31,16 @@ function saveForm(req, res) {
   .then(function (activities) {
     res.render('index',{activities:activities})
   })
+}
+
+function addPage (req, res) {
+  res.render('add')
+}
+
+function add (req, res) {
+  var data = req.body
+  db.addActivity(data.activity, data.time, data.location)
+    .then(function (activities) {
+      res.render('index', { activities: activities })
+    })
 }
