@@ -6,8 +6,10 @@ module.exports = {
   get: get,
   form: form,
   saveForm: saveForm,
+ 
   add: add,
   addPage: addPage
+
 }
 
 function get (req, res) {
