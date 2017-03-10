@@ -5,7 +5,8 @@ var db = require('../db')
 module.exports = {
   get: get,
   form: form,
-  saveForm: saveForm
+  saveForm: saveForm,
+  add:add
 }
 
 function get (req, res) {

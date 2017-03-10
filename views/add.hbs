@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1>Fun Stuff</h1>
+<br>
+
+<form action="/form" method="post">
+  <p> What activity would you like to add? </p>
+  <input type="text" name="activity" placeholder="activity">
+  <br>
+
+  <p> How much time do you have?</p>
+    <input type="radio" name="time" value="10 mins" checked>
+  10mins<br>
+    <input type="radio" name="time" value="15 mins">
+  15mins<br>
+    <input type="radio" name="time" value="30 mins">
+  30mins<br>
+  <input type="radio" name="time" value="45 mins">
+45mins<br>
+    <input type="radio" name="time" value="60 mins">
+  1 hour<br>
+
+  <br><br>
+  <p>Where would you prefer to do this activity?</p>
+    <input type="radio" name="location" value="in" checked>
+  Indoors
+    <input type="radio" name="location" value="out">
+  Outdoors
+
+  <br><br>
+
+  <button type="submit">submit</button>
+</form>
+</body>
+
+</html>
